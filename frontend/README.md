@@ -1,5 +1,7 @@
 FrontEnd my-money-app
 
+- Rodar o projeto: npm run dev
+
 - Dependências
 
 // package json

@@ -19,7 +19,7 @@ module.exports = {
             bootstrap: 'modules/admin-lte/bootstrap/js/bootstrap.js'
         }
     },
-    plugin: [
+    plugins: [
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
@@ -42,6 +42,7 @@ module.exports = {
         }, {
             test: /\.woff|.woff2|.ttf|.eot|.svg|.png|.jpg*.*$/,
             loader: 'file'
-        }]
+        }
+        ]
     }
 }
