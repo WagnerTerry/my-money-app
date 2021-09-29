@@ -1,5 +1,7 @@
 Backend
 
+- para rodar o projeto usar o npm run dev
+
 - Dependências
 
 - npm init -y
