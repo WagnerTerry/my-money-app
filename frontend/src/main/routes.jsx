@@ -10,7 +10,7 @@ export default (props) => (
   <Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Dashboard} />
-      <Router path="/billingCycles" component={BillingCycle} />
+      <Router path="billingCycles" component={BillingCycle} />
     </Route>
     <Redirect from="*" to="/" />
   </Router>
