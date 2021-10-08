@@ -1,6 +1,8 @@
 Backend
 
 - para rodar o projeto usar o npm run dev
+  ou
+  npm run production // para rodar com o pm2
 
 - Dependências
 
