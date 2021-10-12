@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Grid from "../common/layout/grid";
-import { Field, arrayInsert, arrayRemove } from "redux-form";
-import Input from "../common/form/input";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Field, arrayInsert, arrayRemove } from "redux-form";
+import Grid from "../common/layout/grid";
+import Input from "../common/form/input";
 import If from "../common/operator/If";
 
 class ItemList extends Component {
@@ -14,7 +14,7 @@ class ItemList extends Component {
   }
 
   remove(index) {
-    if (!this.props.readOnly) {
+    if (!this.props.readOnly && this.props.list.length > 1) {
       this.props.arrayRemove("billingCycleForm", this.props.field, index);
     }
   }
@@ -22,12 +22,12 @@ class ItemList extends Component {
   renderRows() {
     const list = this.props.list || [];
     return list.map((item, index) => (
-      <tr>
+      <tr key={index}>
         <td>
           <Field
             name={`${this.props.field}[${index}].name`}
             component={Input}
-            placeholder={"Informe o nome"}
+            placeholder="Informe o nome"
             readOnly={this.props.readOnly}
           />
         </td>
@@ -35,7 +35,7 @@ class ItemList extends Component {
           <Field
             name={`${this.props.field}[${index}].value`}
             component={Input}
-            placeholder={"Informe o valor"}
+            placeholder="Informe o valor"
             readOnly={this.props.readOnly}
           />
         </td>
@@ -44,7 +44,7 @@ class ItemList extends Component {
             <Field
               name={`${this.props.field}[${index}].status`}
               component={Input}
-              placeholder={"Informe o status"}
+              placeholder="Informe o status"
               readOnly={this.props.readOnly}
             />
           </td>
@@ -52,7 +52,7 @@ class ItemList extends Component {
         <td>
           <button
             type="button"
-            className="btn btn-sucess"
+            className="btn btn-success"
             onClick={() => this.add(index + 1)}
           >
             <i className="fa fa-plus"></i>

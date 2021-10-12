@@ -66,5 +66,13 @@ class BillingCycle extends Component {
 }
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ init, create, update, remove }, dispatch);
+  bindActionCreators(
+    {
+      init,
+      create,
+      update,
+      remove,
+    },
+    dispatch
+  );
 export default connect(null, mapDispatchToProps)(BillingCycle);

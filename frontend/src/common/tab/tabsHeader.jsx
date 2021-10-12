@@ -1,3 +1,3 @@
 import React from "react";
 
-export default (props) => <div className="nav nav-tabs">{props.children}</div>;
+export default (props) => <ul className="nav nav-tabs">{props.children}</ul>;

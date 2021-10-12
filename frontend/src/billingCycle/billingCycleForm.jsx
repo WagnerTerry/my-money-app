@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { reduxForm, Field, formValueSelector } from "redux-form";
 
 import { init } from "./billingCycleActions";
@@ -26,30 +26,37 @@ class BillingCycleForm extends Component {
           <Field
             name="name"
             component={LabelAndInput}
+            readOnly={readOnly}
             label="Nome"
             cols="12 4"
             placeholder="Informe o nome"
-            readOnly={readOnly}
           />
           <Field
             name="month"
             component={LabelAndInput}
+            type="number"
+            readOnly={readOnly}
             label="Mês"
             cols="12 4"
             placeholder="Informe o mês"
-            type="number"
-            readOnly={readOnly}
           />
           <Field
             name="year"
             component={LabelAndInput}
+            type="number"
+            readOnly={readOnly}
             label="Ano"
             cols="12 4"
             placeholder="Informe o ano"
-            type="number"
-            readOnly={readOnly}
           />
           <Summary credit={sumOfCredits} debt={sumOfDebts} />
+          <ItemList
+            cols="12 6"
+            list={credits}
+            readOnly={readOnly}
+            field="credits"
+            legend="Créditos"
+          />
           <ItemList
             cols="12 6"
             list={debts}
@@ -57,13 +64,6 @@ class BillingCycleForm extends Component {
             field="debts"
             legend="Débitos"
             showStatus={true}
-          />
-          <ItemList
-            cols="12 6"
-            list={credits}
-            readOnly={readOnly}
-            field="credits"
-            legend="Créditos"
           />
         </div>
         <div className="box-footer">

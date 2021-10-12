@@ -14,7 +14,7 @@ class BillingCycleList extends Component {
       <tr key={bc._id}>
         <td>{bc.name}</td>
         <td>{bc.month}</td>
-        <td>{td.year}</td>
+        <td>{bc.year}</td>
         <td>
           <button
             className="btn btn-warning"
@@ -32,6 +32,7 @@ class BillingCycleList extends Component {
       </tr>
     ));
   }
+
   render() {
     return (
       <div>

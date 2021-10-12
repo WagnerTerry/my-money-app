@@ -31,15 +31,12 @@ function submit(values, method) {
     const id = values._id ? values._id : "";
     axios[method](`${BASE_URL}/billingCycles/${id}`, values)
       .then((resp) => {
-        toastr.success("Sucesso", "Operação realizada com sucesso");
+        toastr.success("Sucesso", "Operação Realizada com sucesso.");
         dispatch(init());
       })
       .catch((e) => {
         e.response.data.errors.forEach((error) => toastr.error("Erro", error));
       });
-    return {
-      type: "TEMP",
-    };
   };
 }
 

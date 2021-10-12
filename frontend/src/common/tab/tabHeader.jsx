@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import If from "../operator/If";
 
+import If from "../operator/If";
 import { selectTab } from "./tabActions";
 
 class TabHeader extends Component {
@@ -29,5 +29,4 @@ class TabHeader extends Component {
 const mapStateToProps = (state) => ({ tab: state.tab });
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators({ selectTab }, dispatch);
-
 export default connect(mapStateToProps, mapDispatchToProps)(TabHeader);
