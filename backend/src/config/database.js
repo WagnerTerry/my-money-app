@@ -12,6 +12,13 @@
 
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
-module.exports = mongoose.connect("mongodb://localhost/mymoney", {
-  useMongoClient: true,
-});
+module.exports = mongoose.connect(
+  //conexão mongo atlas
+  "mongodb+srv://wagner:1590456@mymoney-backend.0u8ty.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  {
+    //conexao local
+    //module.exports = mongoose.connect("mongodb://localhost/mymoney", {
+    useMongoClient: true,
+  }
+);
