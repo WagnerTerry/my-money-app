@@ -10,3 +10,9 @@
 
 ## Video (Youtube)
 [Apresentação do my-money-app](https://youtu.be/njFmnobwDH4)
+
+### Executando o projeto
+precisa estar rodando:
+no terminal: mongod
+backend: npm run dev
+frontend: npm run dev
